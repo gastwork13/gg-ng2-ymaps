@@ -9,10 +9,12 @@
     "url": "https://github.com/gastwork13/gg-ng2-ymaps"
   },
   "homepage": "https://github.com/gastwork13/gg-ng2-ymaps",
+  "dependencies": {
+    "@types/yandex-maps": "^2.1.4"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
-    "@types/yandex-maps": "^2.1.4"
+    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0"
   }
 }
