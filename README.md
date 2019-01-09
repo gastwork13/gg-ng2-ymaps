@@ -3,7 +3,7 @@
 Позволяет работать с api яндекс карт напрямую. В зависимостях есть @types/yandex-maps, что облегчает работу с api.
 
 ## Установка
-`npm install @gg/ng2-ymaps`
+`npm install --save @gastwork13/ng2-ymaps`
 
 ## Использование
 Импортируйте **GgNg2YmapsModule** в корневом модуле.

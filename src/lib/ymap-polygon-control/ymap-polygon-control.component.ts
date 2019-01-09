@@ -147,6 +147,7 @@ export class YmapPolygonControlComponent implements ControlValueAccessor, OnInit
         // @ts-ignore
         (<ymaps.geometry.Polygon>this._polygon.geometry).setCoordinates(coordinates);
         this._map.setBounds(this._polygon.geometry.getBounds());
+        // @ts-ignore
         this.fillForm((<ymaps.geometry.Polygon>this._polygon.geometry).getCoordinates());
       }
     }
