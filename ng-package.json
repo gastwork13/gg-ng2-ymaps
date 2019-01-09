@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/gg/ng2-ymaps",
+  "whitelistedNonPeerDependencies": ["."],
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  }
+}

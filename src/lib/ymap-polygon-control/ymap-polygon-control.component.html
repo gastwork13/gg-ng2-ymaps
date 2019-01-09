@@ -1,0 +1,29 @@
+<gg-ymap (mapReady)="initMap($event)"
+         [controls]="controls"
+         [margin]="margin"
+         [mapType]="mapType"
+         [zoom]="zoom"
+         [style]="style"></gg-ymap>
+<form *ngIf="showForm()" [formGroup]="formGroup" (ngSubmit)="savePoints()">
+  <div class="areas" formArrayName="points">
+    <div class="area" *ngFor="let area of pointControls.controls; let areaInd = index" [formArrayName]="areaInd">
+      <div class="title">
+        <span>Контур #{{areaInd + 1}}</span>
+        <button [disabled]="disableDeleteArea()" type="button" (click)="removeArea(areaInd)">Удалить контур</button>
+      </div>
+      <div class="controls" *ngFor="let point of getAreaControls(area); let pointInd = index" [formArrayName]="pointInd">
+        <span>{{pointInd + 1}})</span>
+        <input [formControlName]="0"/>
+        <input [formControlName]="1"/>
+        <button type="button" [disabled]="disableDeletePoint(area)" (click)="removePoint(area, pointInd)">Удалить точку</button>
+      </div>
+
+      <button type="button" [disabled]="disableButtonsCommon()" (click)="addPoint(area)">Добавить точку</button>
+    </div>
+  </div>
+  <div class="buttons">
+    <button type="button" [disabled]="disableButtonsCommon()" (click)="addArea()">Добавить контур</button>
+    <button type="submit" [disabled]="disableSubmitButton()">Применить к карте</button>
+    <button type="button" [disabled]="disableButtonsCommon()" (click)="cancelPoints()">Сбросить изменения</button>
+  </div>
+</form>
