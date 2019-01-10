@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BrowserGlobalsService} from './browser-globals.service';
+import {environment} from '../../../../../src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +21,16 @@ export class GgYmapsService {
   }
 
   private _load(): Promise<void> {
+    let ymapsSrc = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    if (environment.yandexApiKey) {
+      ymapsSrc += '&apikey=' + environment.yandexApiKey;
+    }
     const script = this._documentRef.createElement('script');
     script.type = 'text/javascript';
     script.async = false;
     script.defer = true;
     script.id = 'YaScript';
-    script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    script.src = ymapsSrc;
 
     this._scriptLoadingPromise = new Promise<void>((resolve: Function, reject: Function) => {
       script.onload = () => { resolve(); };

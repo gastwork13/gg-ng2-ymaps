@@ -1,6 +1,6 @@
 {
   "name": "@gastwork13/ng2-ymaps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Библиотека для работы с yandex api в Angular 2+",
   "keywords": ["Angular", "Yandex", "ymaps"],
   "license": "MIT",
