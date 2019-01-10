@@ -9,12 +9,29 @@
 Импортируйте **GgNg2YmapsModule** в корневом модуле.
 
 ```
+...
 import {GgNg2YmapsModule} from '@gg/ng2-ymaps';
 
 @NgModule({
   imports: [
     ...,
     GgNg2YmapsModule
+  ],
+  ...
+})
+
+```
+
+Чтобы передать **environment** в модуль библиотеки - укажите его как аргумент для модуля при импорте, например:
+
+```
+...
+import {environment} from '../environments/environment';
+
+@NgModule({
+  imports: [
+    ...,
+    GgNg2YmapsModule.forRoot(environment)
   ],
   ...
 })
